@@ -1,26 +1,48 @@
 :root {
   font-size: 16px/1 em;
-  font-family: 'Sofia Pro', sans-serif;
-  color: ;
+--purple: rgb(123, 31, 162);
+--violet: rgb(103, 58, 183);
+--pink: rgb(244, 143, 177);
 }
 
-a {
-}
-a:hover {
+@keyframes background-pan {
+  from {
+    background-position: 0% center;
+  }
+  to {
+    background-position: -200% center;
+  }
 }
 
 body {
+  background-color: rgb(10, 10, 10);
+  display: grid;
+  height: 100vh;
+  margin: 0px;
+  overflow: hidden;
+  place-items: center;
 }
 
 h1 {
-  font-size: 4rem;
+  color: wheat;
+  font-family: "Rubik", sans-serif;
+  font-size: clamp(2em, 2vw, 4em);
+  font-weight: 400;
+  margin: 0px;
+  padding: 20px;
+  text-align: center;
 }
-
-.subhead {
-}
-p {
-}
-button {
-}
-button:hover {
+h1 > .magic > .magic-text{
+animation: background-pan 3s linear infinite;
+background: linear-gradient(
+  to right, 
+  var(--purple), 
+  var(--violet), 
+  var(--pink), 
+  var(--purple)
+);
+background-size: 200%;
+-webkit-background-clip: text; 
+-webkit-text-fill-color: transparent;
+white-space: nowrap;
 }
